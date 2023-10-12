@@ -16,6 +16,7 @@ int main()
     {
         y = z;
     }
+    
     printf("x=%.lf, y=%.lf, z=%.lf\n", x, y, z);
 
     return 0;
