@@ -3,8 +3,7 @@ using namespace std;
 
 int main()
 {
-    int firstNum;
-    int secondNum;
+    int firstNum, secondNum;
     string operation = "";
 
     cout << "Enter a value for the first number: ";
