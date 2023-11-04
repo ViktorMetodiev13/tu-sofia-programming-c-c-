@@ -5,19 +5,19 @@ int main()
 {
     int a, b, max;
 
+    printf("a: ");
     cin >> a;
+    printf("b: ");
     cin >> b;
 
-    if (a > b)
-    {
-        max = a;
-    }
-    else
+    max = a;
+
+    if (max < b)
     {
         max = b;
     }
-
-    cout << max;
+    
+    printf("max = %d", max);
 
     return 0;
 }
