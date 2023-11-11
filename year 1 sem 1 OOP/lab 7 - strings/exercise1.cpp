@@ -12,12 +12,10 @@ int main()
     {
         if (islower(input[i]))
         {
-            toupper(input[i]);
             output += toupper(input[i]);
         }
         else
         {
-            tolower(input[i]);
             output += tolower(input[i]);
         }
     }
