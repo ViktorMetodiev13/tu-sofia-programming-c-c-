@@ -6,6 +6,9 @@ using namespace std;
 void display(int x[], int nx);
 float aver(int x[], int nx);
 int max_elem(int x[], int nx);
+void even(int x[], int nx, int *cnt, int *suma);
+void bblsort(int x[], int nx);
+int sumOfNumbersDividableBy7(int x[], int nx);
 
 int main()
 {
@@ -92,4 +95,55 @@ int max_elem(int x[], int nx)
     }
 
     return max;
+}
+
+void even(int x[], int nx, int *cnt, int *suma)
+{
+    int k;
+    *cnt = 0;
+    *suma = 0;
+    for (k = 0; k < nx; k++)
+    {
+        if (x[k] % 2 == 0)
+        {
+            printf("\nEven : %d", x[k]);
+            (*cnt)++;
+            *suma = *suma + x[k];
+        }
+    }
+
+    if (*cnt == 0)
+    {
+        *suma = -1;
+    }
+}
+
+void bblsort(int x[], int nx)
+{
+    int k, m, temp;
+    for (k = 1; k < nx; k++)
+        for (m = nx - 1; m >= k; m--)
+        {
+            if (x[m - 1] > x[m])
+            {
+                temp = x[m - 1];
+                x[m - 1] = x[m];
+                x[m] = temp;
+            }
+        }
+}
+
+int sumOfNumbersDividableBy7(int x[], int nx)
+{
+    int counter;
+
+    for (size_t k = 0; k < nx; k++)
+    {
+        if (x[k] % 7 == 0)
+        {
+            counter++;
+        }
+    }
+
+    return counter;
 }
