@@ -3,7 +3,7 @@ using namespace std;
 
 int main()
 {
-    int n, a[100], positiveNumbersCout = 0;
+    int n, a[100], positiveNumbersCount = 0;
     cout << "Enter value for n: ";
     cin >> n;
 
@@ -14,17 +14,17 @@ int main()
 
         if (a[i] > 0)
         {
-            positiveNumbersCout++;
+            positiveNumbersCount++;
         }
     }
 
-    if (positiveNumbersCout == 0)
+    if (positiveNumbersCount == 0)
     {
         printf("There are no positive numbers");
     }
     else
     {
-        printf("Positive Numbers = %d\n", positiveNumbersCout);
+        printf("Positive Numbers = %d\n", positiveNumbersCount);
     }
 
     return 0;
