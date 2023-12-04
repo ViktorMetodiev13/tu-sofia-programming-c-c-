@@ -66,7 +66,7 @@ int main()
     tr1.show("tr1");
     s = tr1.area();
     p = tr1.perimeter();
-    cout << "\ns=" << s << endl;
+    cout << "\ns=" << s;
     cout << "\nperimeter= " << p << endl;
 
     return 0;
