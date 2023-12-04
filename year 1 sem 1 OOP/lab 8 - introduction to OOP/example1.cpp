@@ -1,22 +1,26 @@
 #include <iostream>
 #include <cmath>
 using namespace std;
+
 class triangle
-{ // Начало на дефиницията на клас triangle
+{
 private:
     float a, b, c;
 
 public:
-    triangle();                    // Конструктор без аргументи
-    triangle(float, float, float); // Конструктор с три аргумента
-    float area();                  // Член-функция area()
-    void show(const char *);     // Член-функция show()
-    ~triangle()                    // Деструктор
+    triangle();
+    triangle(float, float, float);
+    float area();
+    float perimeter();
+
+    void show(const char *);
+    ~triangle()
     {
         cout << "Destroying object!" << endl;
     }
-};                   // Край на декларацията на клас triangle
-triangle::triangle() // Дефиниция на конструктор без аргументи
+};
+
+triangle::triangle()
 {
     do
     {
@@ -24,35 +28,46 @@ triangle::triangle() // Дефиниция на конструктор без а
         cin >> a >> b >> c;
     } while (!((a > 0) && (b > 0) && (c > 0) && ((a + b) > c) && ((a + c) > b) && ((b + c) > a)));
 }
-triangle::triangle(float len1, float len2, float len3) // конструктор с 3 аргумента
+
+triangle::triangle(float len1, float len2, float len3)
 {
     a = len1;
     b = len2;
     c = len3;
 }
-float triangle::area() // Дефиниция на член-функция area()
+
+float triangle::area()
 {
     float p, s;
     p = (a + b + c) / 2;
     s = sqrt(p * (p - a) * (p - b) * (p - c));
     return s;
 }
-void triangle::show(const char *name) // Дефиниция на член-функция show()
+
+float triangle::perimeter()
+{
+    float p;
+    p = a + b + c;
+    return p;
+}
+
+void triangle::show(const char *name)
 {
     cout << "\nTriangle " << name << " sides:" << endl;
     cout << "a=" << a << ", b=" << b << ", c=" << c;
 }
-// Край на дефиницията на клас triangle
-int main() // Главна функция за тестуване на клас triangle
+
+int main()
 {
-    triangle tr1;          // Обект tr1; извиква се конструкторът без аргументи
-    triangle tr2(3, 4, 5); // Обект tr2; извиква се конструкторът с три аргумента
+    triangle tr1;
+    triangle tr2(3, 4, 5);
     float s;
+    float p;
     tr1.show("tr1");
-    s = tr1.area(); // Извиква се член-функция area() за tr1
+    s = tr1.area();
+    p = tr1.perimeter();
     cout << "\ns=" << s << endl;
-    tr2.show("tr2");
-    cout << "\ns=" << tr2.area() << endl; // Извиква се член-функции area() за tr2
-    system("pause");
+    cout << "\nperimeter= " << p << endl;
+
     return 0;
 }
