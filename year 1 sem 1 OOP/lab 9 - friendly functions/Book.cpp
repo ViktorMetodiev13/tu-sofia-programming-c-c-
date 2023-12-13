@@ -3,7 +3,7 @@
 
 using namespace std;
 
-class Book 
+class Book
 {
     private:
         string title;
@@ -23,11 +23,11 @@ class Book
 
         string getTitle() { return title; };
         string getAuthor() { return author; };
-        unsigned getYear() { return year; };
+        int getYear() { return year; };
         double getPrice() { return price; };
         void setTitle(string t) { title = t; };
         void setAuthor(string aut) { author = aut; };
-        void setYear(unsigned y) { year = y; };
+        void setYear(int y) { year = y; };
         void setPrice(double p) { price = p; };
 
     void display();
@@ -57,39 +57,46 @@ void Book::display()
 
 int main()
 {
-    Book *pArr = new Book[3];
+    Book *pArr = new Book[2];
     string t;
     string aut;
-    unsigned y;
+    int y;
     double p;
 
     int flag = 0;
     cout << "Enter data: " << endl;
 
-    for(int i = 0; i < 6; i++) {
-        cout << "Title: "; 
-        getline(cin, t); 
+    for(int i = 0; i < 2; i++) 
+    {
+        cout << "Title: ";
+        getline(cin, t);
         pArr[i].setTitle(t);
+
         cout << "Author: ";
         cin >> aut;
         pArr[i].setAuthor(aut);
+
         cout << "Year: ";
-        cin >> y; 
+        cin >> y;
         pArr[i].setYear(y);
+
         cout << "Price: "; 
         cin >> p; 
         pArr[i].setPrice(p);
+
         cin.ignore();
     }
 
-    for(int i = 0; i < 6; i++) {
+    // display all books
+    for(int i = 0; i < 2; i++) {
         pArr[i].display();
     }
 
+    // Search for books by year
     cout << "Search books by year: ";
     cin >> y;
 
-    for(int i = 0; i < 6; i++) 
+    for(int i = 0; i < 2; i++) 
     {
         if(pArr[i].getYear() == y) {
             cout << "Books found: " << endl;
@@ -104,16 +111,16 @@ int main()
         cout << "No Books found published in " << y << endl;
     }
 
+    // Search books by author
     cout << "Search by author: ";
     cin >> aut;
     flag = 0;
 
-    for(int i = 0; i < 6; i++) {
+    for(int i = 0; i < 2; i++) {
         if(pArr[i].getAuthor() == aut) {
             cout << "Books found: " << endl;
             pArr[i].display();
             flag++;
-            break;
         }
     }
     
