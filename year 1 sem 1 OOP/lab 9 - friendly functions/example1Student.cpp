@@ -43,6 +43,7 @@ Student::Student(string n, unsigned fn, double sc)
 
 void Student::display()
 {
+    cout << "\n";
     cout << "Name: " << name << endl;
     cout << "Faculty ID: " << fnum << endl;
     cout << "Score: " << score << endl;
