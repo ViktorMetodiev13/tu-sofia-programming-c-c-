@@ -61,7 +61,7 @@ Student::Student(string n, string ad, int fn, float sc, string uni) : Person(n, 
 void Student::displayStudent() 
 {
     displayPerson();
-    cout << "Student: " << fnum << " " << score << "  " << "  " << university << endl;
+    cout << "Student: " << fnum << " " << score << " " << university << endl;
 };
 
 void Student::changeName(string newName) {
