@@ -33,13 +33,16 @@ void Person::displayPerson() {
 class Student : public Person {
     int fnum;
     float score;
+    string university;
     public:
         void setFNum(int fn) { fnum = fn; };
         void setScore(int sc) { score = sc; };
+        void setUni(int uni) { university = uni; };
         int getFNum() { return fnum; };
         float getScore() { return score; };
+        string getUniversity() { return university; };
 
-        Student(string n, string ad, int fn, float sc);
+        Student(string n, string ad, int fn, float sc, string uni);
         void displayStudent();
         void changeName(string);
         void changeAddress(string);
@@ -49,15 +52,16 @@ class Student : public Person {
         }
 };
 
-Student::Student(string n, string ad, int fn, float sc) : Person(n, ad) {
+Student::Student(string n, string ad, int fn, float sc, string uni) : Person(n, ad) {
     fnum = fn;
     score = sc;
+    university = uni;
 };
 
 void Student::displayStudent() 
 {
     displayPerson();
-    cout << "Student: " << fnum << " " << score << "  " << endl;
+    cout << "Student: " << fnum << " " << score << "  " << "  " << university << endl;
 };
 
 void Student::changeName(string newName) {
@@ -75,9 +79,9 @@ int main()
     Person p2("Ana Dimitrova", "Ruse");
     p2.displayPerson();
 
-    Student st1("Ivan Velev", "Pleven", 1012001, 4.32f);
+    Student st1("Ivan Velev", "Pleven", 1012001, 4.32f, "Tu-Sofia");
     st1.displayStudent();
-    Student st2("Maria Koleva", "Varna", 1012002, 3.62f);
+    Student st2("Maria Koleva", "Varna", 1012002, 3.62f, "Tu-Sofia");
     st2.displayStudent();
 
     string tmp_ad;
@@ -92,6 +96,15 @@ int main()
     else 
     {
         cout << "Better score has " << st2.getName() << endl;
+    }
+
+    if(st1.getUniversity() == st2.getUniversity()) 
+    {
+        cout << "The students study in the same university!" << endl;
+    }
+    else
+    {
+        cout << "The students study in different universities" << endl;
     }
 
     return 0;
