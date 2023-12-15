@@ -7,12 +7,12 @@ class Person {
         string name;
         string address;
     public:
-        Person(string, string);
         void setName(string n) { name = n; };
         void setAddress(string adr) { address = adr; };
         string getName() { return name; };
         string getAddress() { return address; };
 
+        Person(string, string);
         void displayPerson();
 
     ~Person() {
@@ -73,11 +73,6 @@ void Student::changeAddress(string newAdr) {
 
 int main()
 {
-    Person p1("Peter Petrov", "Plovdiv");
-    p1.displayPerson();
-    Person p2("Ana Dimitrova", "Ruse");
-    p2.displayPerson();
-
     Student st1("Ivan Velev", "Pleven", 1012001, 4.32f, "Tu-Sofia");
     st1.displayStudent();
     Student st2("Maria Koleva", "Varna", 1012002, 3.62f, "Tu-Sofia");
