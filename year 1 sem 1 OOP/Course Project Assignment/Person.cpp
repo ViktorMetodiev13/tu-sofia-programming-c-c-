@@ -41,31 +41,45 @@ void Person::displayPerson()
 class HourlyEmployee : public Person {
     private: 
         int workedHours;
-        int hourlyRate;
+        double hourlyRate;
     public: 
         void setWorkedHours(int hours) { workedHours = hours; };
-        void setHourlyRate(int rate) { hourlyRate = rate; };
+        void setHourlyRate(double rate) { hourlyRate = rate; };
         int getWorkedHours() { return workedHours; };
-        int getHourlyRate() { return hourlyRate; };
+        double getHourlyRate() { return hourlyRate; };
 
-        HourlyEmployee(string n, string adr, int id, int hours, int rate) : Person(n, adr, id)
+        HourlyEmployee(string n, string adr, int id, int hours, double rate);
         void displayEmployee();
+    //     friend int monthlyPayment(HourlyEmployee& y);
     
-    ~HourlyEmployee() 
+    // int monthlyPayment()
+    // {
+    //     double salary = workedHours * hourlyRate;
+    //     return salary;
+    // }
+
+    ~HourlyEmployee()
     {
         cout << "Employee destroyed!" << endl;
     }
 };
 
-HourlyEmployee::HourlyEmployee(string n, string adr, int hours, int rate) 
+HourlyEmployee::HourlyEmployee(string n, string adr, int id, int hours, double rate) : Person(n, adr, id)
 {
     workedHours = hours;
     hourlyRate = rate;
-}
+};
+
+void HourlyEmployee::displayEmployee() 
+{
+    displayPerson();
+    cout << "Worked hours this month: " << workedHours << endl;
+    cout << "Hourly rate: " << hourlyRate << endl;
+};
 
 int main () 
 {
 
     return 0;
-}
+};
 
