@@ -38,6 +38,31 @@ void Person::displayPerson()
     cout << "ID: " << ID << endl;
 };
 
+class HourlyEmployee : public Person {
+    private: 
+        int workedHours;
+        int hourlyRate;
+    public: 
+        void setWorkedHours(int hours) { workedHours = hours; };
+        void setHourlyRate(int rate) { hourlyRate = rate; };
+        int getWorkedHours() { return workedHours; };
+        int getHourlyRate() { return hourlyRate; };
+
+        HourlyEmployee(string n, string adr, int id, int hours, int rate) : Person(n, adr, id)
+        void displayEmployee();
+    
+    ~HourlyEmployee() 
+    {
+        cout << "Employee destroyed!" << endl;
+    }
+};
+
+HourlyEmployee::HourlyEmployee(string n, string adr, int hours, int rate) 
+{
+    workedHours = hours;
+    hourlyRate = rate;
+}
+
 int main () 
 {
 
