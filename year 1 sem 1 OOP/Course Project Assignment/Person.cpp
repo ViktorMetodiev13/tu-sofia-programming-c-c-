@@ -122,6 +122,15 @@ int main ()
     }
 
     // TODO: print avg monthly payment with hourly wages
+    double sum = 0;
+    for (size_t i = 0; i < numberOfEmployees; i++)
+    {
+        sum += monthlyPayment(arr[i]);
+    }
+
+    double avgPayment = sum / numberOfEmployees;
+    
+    cout << "Average monthly monthly payment of employees: " << avgPayment << endl;
 
     delete[] arr;
 
