@@ -115,6 +115,11 @@ int main ()
 
     // TODO: for loop from i = 0 until i < arr[n].length()
     // print names and monthly payment for all employees
+    for (size_t i = 0; i < numberOfEmployees; i++)
+    {
+        cout << "Employees monthly payments: " << endl;
+        cout << arr[i].getName() << " earned " << monthlyPayment(arr[i]) << "$ this month" << endl;
+    }
 
     // TODO: print avg monthly payment with hourly wages
 
