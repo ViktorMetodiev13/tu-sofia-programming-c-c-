@@ -38,7 +38,7 @@ void Person::displayPerson()
     cout << "ID: " << ID << endl;
 };
 
-class HourlyEmployee : public Person {
+class Employee : public Person {
     private: 
         int workedHours;
         double hourlyRate;
@@ -48,55 +48,77 @@ class HourlyEmployee : public Person {
         int getWorkedHours() { return workedHours; };
         double getHourlyRate() { return hourlyRate; };
 
-        HourlyEmployee(string n, string adr, int id, int hours, double rate);
+        Employee();
+        Employee(string n, string adr, int id, int hours, double rate);
         void displayEmployee();
-    //     friend int monthlyPayment(HourlyEmployee& y);
+        friend double monthlyPayment(Employee& y);
     
-    // int monthlyPayment()
-    // {
-    //     double salary = workedHours * hourlyRate;
-    //     return salary;
-    // }
 
-    ~HourlyEmployee()
+    ~Employee()
     {
         cout << "Employee destroyed!" << endl;
     }
 };
 
-HourlyEmployee::HourlyEmployee(string n, string adr, int id, int hours, double rate) : Person(n, adr, id)
+Employee::Employee(string n, string adr, int id, int hours, double rate) : Person(n, adr, id)
 {
     workedHours = hours;
     hourlyRate = rate;
 };
 
-void HourlyEmployee::displayEmployee()
+void Employee::displayEmployee()
 {
     displayPerson();
     cout << "Worked hours this month: " << workedHours << endl;
     cout << "Hourly rate: " << hourlyRate << endl;
 };
 
-int main () 
+double monthlyPayment(Employee& y) {
+    double salary = y.workedHours * y.hourlyRate;
+    return salary;
+};
+
+int main ()
 {
-    // TODO: do while doesn't work - fix it
-    int n;
-    int arr[n];
+    string n, adr;
+    int id, hours;
+    double rate;
+
+    int numberOfEmployees;
 
     do
     {
         cout << "Enter number for employees(between 1 and 50): ";
-        cin >> n;
-    } while (n <= 0 && n >= 50);
+        cin >> numberOfEmployees;
+    } while (numberOfEmployees <= 0 && numberOfEmployees >= 50);
 
-    cout << "n = " << n << endl;
-    // TODO: for loop from i = 0 until i < arr[n].length() 
-    // to print info for all employees
+    Employee *arr = new Employee[numberOfEmployees];
+
+    for (size_t i = 0; i < numberOfEmployees; i++)
+    {
+        cout << "Enter name: ";
+        cin >> n;
+        cout << "Enter address: ";
+        cin >> adr;
+        cout << "Enter ID: ";
+        cin >> id;
+        cout << "Enter worked hours: ";
+        cin >> hours;
+        cout << "Enter hourly rate:";
+        cin >> rate;
+        arr[i] = Employee(n, adr, id, hours, rate);
+    }
+
+    for (size_t i = 0; i < numberOfEmployees; i++) {
+        arr[i].displayEmployee();
+    }
 
     // TODO: for loop from i = 0 until i < arr[n].length()
     // print names and monthly payment for all employees
 
     // TODO: print avg monthly payment with hourly wages
+
+    delete[] arr;
 
     return 0;
 };
