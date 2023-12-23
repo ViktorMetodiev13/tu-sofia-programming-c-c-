@@ -15,6 +15,10 @@ public:
     float area();
 
     void show(const char *);
+    ~circle()
+    {
+        cout << "Destroying object!" << endl;
+    }
 };
 
 circle::circle()
@@ -47,7 +51,7 @@ float circle::area()
 
 void circle::show(const char *name)
 {
-    cout << "\nCircle " << name << " radius:" << radius << endl;
+    cout << "\nCircle " << name << " radius: " << radius << endl;
 }
 
 int main()

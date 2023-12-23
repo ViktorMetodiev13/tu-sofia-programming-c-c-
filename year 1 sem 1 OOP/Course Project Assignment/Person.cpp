@@ -70,7 +70,7 @@ HourlyEmployee::HourlyEmployee(string n, string adr, int id, int hours, double r
     hourlyRate = rate;
 };
 
-void HourlyEmployee::displayEmployee() 
+void HourlyEmployee::displayEmployee()
 {
     displayPerson();
     cout << "Worked hours this month: " << workedHours << endl;
@@ -87,8 +87,9 @@ int main ()
     {
         cout << "Enter number for employees(between 1 and 50): ";
         cin >> n;
-    } while (n >= 0 && n <= 50);
+    } while (n <= 0 && n >= 50);
 
+    cout << "n = " << n << endl;
     // TODO: for loop from i = 0 until i < arr[n].length() 
     // to print info for all employees
 
