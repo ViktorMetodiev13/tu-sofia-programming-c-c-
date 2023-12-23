@@ -2,19 +2,29 @@
 
 using namespace std;
 
-int main () 
+int main ()
 {
-    // TODO: do while doesn't work - fix it
-    int n;
-    int arr[n];
+    string n, adr;
+    int id, hours;
+    double rate;
+
+    int numberOfEmployees;
+    int arr[numberOfEmployees];
 
     do
     {
         cout << "Enter number for employees(between 1 and 50): ";
-        cin >> n;
-    } while (n <= 0 && n >= 50);
+        cin >> numberOfEmployees;
+    } while (numberOfEmployees <= 0 && numberOfEmployees >= 50);
 
-    cout << "n = " << n << endl;
+    for (size_t i = 0; i < numberOfEmployees; i++)
+    {
+        cout << "Enter name: ";
+        cin >> n;
+        cout << "Enter address: ";
+        cin >> adr;
+    }
+    
     // TODO: for loop from i = 0 until i < arr[n].length() 
     // to print info for all employees
 

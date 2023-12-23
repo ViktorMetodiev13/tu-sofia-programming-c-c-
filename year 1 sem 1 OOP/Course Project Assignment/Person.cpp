@@ -48,11 +48,10 @@ class Employee : public Person {
         int getWorkedHours() { return workedHours; };
         double getHourlyRate() { return hourlyRate; };
 
-        Employee();
+        Employee() : Person("", "", 0), workedHours(0), hourlyRate(0.0) {};
         Employee(string n, string adr, int id, int hours, double rate);
         void displayEmployee();
         friend double monthlyPayment(Employee& y);
-    
 
     ~Employee()
     {
@@ -90,7 +89,7 @@ int main ()
     {
         cout << "Enter number for employees(between 1 and 50): ";
         cin >> numberOfEmployees;
-    } while (numberOfEmployees <= 0 && numberOfEmployees >= 50);
+    } while (numberOfEmployees <= 0 || numberOfEmployees >= 50);
 
     Employee *arr = new Employee[numberOfEmployees];
 
@@ -104,7 +103,7 @@ int main ()
         cin >> id;
         cout << "Enter worked hours: ";
         cin >> hours;
-        cout << "Enter hourly rate:";
+        cout << "Enter hourly rate: ";
         cin >> rate;
         arr[i] = Employee(n, adr, id, hours, rate);
     }
@@ -115,10 +114,10 @@ int main ()
 
     // TODO: for loop from i = 0 until i < arr[n].length()
     // print names and monthly payment for all employees
+    cout << "Employees monthly payments: " << endl;
     for (size_t i = 0; i < numberOfEmployees; i++)
     {
-        cout << "Employees monthly payments: " << endl;
-        cout << arr[i].getName() << " earned " << monthlyPayment(arr[i]) << "$ this month" << endl;
+        cout << arr[i].getName() << " earned " << monthlyPayment(arr[i]) << "$ this month." << endl;
     }
 
     // TODO: print avg monthly payment with hourly wages
@@ -129,11 +128,12 @@ int main ()
     }
 
     double avgPayment = sum / numberOfEmployees;
-    
-    cout << "Average monthly monthly payment of employees: " << avgPayment << endl;
+
+    cout << "The Average monthly payment of employees is " << avgPayment << "$." << endl;
 
     delete[] arr;
 
     return 0;
 };
+
 
