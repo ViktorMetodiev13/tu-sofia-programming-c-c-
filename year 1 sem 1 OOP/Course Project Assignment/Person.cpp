@@ -20,7 +20,7 @@ class Person {
 
     ~Person() 
     {
-        cout << "Person destroyed!" << endl;
+        cout << "People destroyed!" << endl;
     }
 };
 
@@ -55,7 +55,7 @@ class Employee : public Person {
 
     ~Employee()
     {
-        cout << "Employee destroyed!" << endl;
+        cout << "Employees destroyed!" << endl;
     }
 };
 
@@ -89,7 +89,7 @@ int main ()
     {
         cout << "Enter number for employees(between 1 and 50): ";
         cin >> numberOfEmployees;
-    } while (numberOfEmployees <= 0 || numberOfEmployees >= 50);
+    } while (numberOfEmployees <= 0 || numberOfEmployees > 50);
 
     Employee *arr = new Employee[numberOfEmployees];
 
