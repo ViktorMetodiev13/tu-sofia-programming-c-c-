@@ -20,7 +20,7 @@ class Person {
 
     ~Person() 
     {
-        cout << "People destroyed!" << endl;
+        cout << "Person destroyed!" << endl;
     }
 };
 
@@ -55,7 +55,7 @@ class Employee : public Person {
 
     ~Employee()
     {
-        cout << "Employees destroyed!" << endl;
+        cout << "Employee destroyed!" << endl;
     }
 };
 
