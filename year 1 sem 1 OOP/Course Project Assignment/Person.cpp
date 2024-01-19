@@ -24,7 +24,7 @@ class Person {
     }
 };
 
-Person::Person(string n, string adr, int id) 
+Person::Person(string n, string adr, int id)
 {
     name = n;
     address = adr;
@@ -93,7 +93,7 @@ int main ()
 
     Employee *arr = new Employee[numberOfEmployees];
 
-    for (size_t i = 0; i < numberOfEmployees; i++)
+    for (int i = 0; i < numberOfEmployees; i++)
     {
         cout << "Enter name: ";
         cin >> n;
@@ -108,18 +108,18 @@ int main ()
         arr[i] = Employee(n, adr, id, hours, rate);
     }
 
-    for (size_t i = 0; i < numberOfEmployees; i++) {
+    for (int i = 0; i < numberOfEmployees; i++) {
         arr[i].displayEmployee();
     }
 
     cout << "Employees monthly payments: " << endl;
-    for (size_t i = 0; i < numberOfEmployees; i++)
+    for (int i = 0; i < numberOfEmployees; i++)
     {
         cout << arr[i].getName() << " earned " << monthlyPayment(arr[i]) << "$ this month." << endl;
     }
 
     double sum = 0;
-    for (size_t i = 0; i < numberOfEmployees; i++)
+    for (int i = 0; i < numberOfEmployees; i++)
     {
         sum += monthlyPayment(arr[i]);
     }
