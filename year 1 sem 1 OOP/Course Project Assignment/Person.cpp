@@ -20,7 +20,7 @@ class Person {
 
     ~Person() 
     {
-        cout << "Person destroyed!" << endl;
+        cout << "Person saved and destroyed!" << endl;
     }
 };
 
@@ -55,7 +55,7 @@ class Employee : public Person {
 
     ~Employee()
     {
-        cout << "Employee destroyed!" << endl;
+        cout << "Employee saved and destroyed!" << endl;
     }
 };
 
@@ -87,7 +87,7 @@ int main ()
 
     do
     {
-        cout << "Enter number for employees(between 1 and 50): ";
+        cout << "Enter number for employees(between 0 and 50): ";
         cin >> numberOfEmployees;
     } while (numberOfEmployees <= 0 || numberOfEmployees > 50);
 
@@ -112,15 +112,12 @@ int main ()
         arr[i].displayEmployee();
     }
 
-    // TODO: for loop from i = 0 until i < arr[n].length()
-    // print names and monthly payment for all employees
     cout << "Employees monthly payments: " << endl;
     for (size_t i = 0; i < numberOfEmployees; i++)
     {
         cout << arr[i].getName() << " earned " << monthlyPayment(arr[i]) << "$ this month." << endl;
     }
 
-    // TODO: print avg monthly payment with hourly wages
     double sum = 0;
     for (size_t i = 0; i < numberOfEmployees; i++)
     {
