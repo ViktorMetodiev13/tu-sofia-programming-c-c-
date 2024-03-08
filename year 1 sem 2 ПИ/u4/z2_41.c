@@ -9,11 +9,26 @@ int main()
 
     if (n % 5 == 0) 
     {
-        printf("The number is dividable by 5 remainder.");
+        printf("The number is dividable by 5 without a remainder.");
     } 
     else
     {
-        
+        if(n % 5 == 1)
+        {
+            printf("The remainder is 1.");
+        }
+        else if(n % 5 == 2)
+        {
+            printf("The remainder is 2.");
+        }
+        else if(n % 5 == 3)
+        {
+            printf("The remainder is 3.");
+        }
+        else if(n % 5 == 4)
+        {
+            printf("The remainder is 4.");
+        }
     }
     
     return 0;
