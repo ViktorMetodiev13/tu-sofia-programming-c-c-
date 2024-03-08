@@ -10,13 +10,11 @@ int main()
     printf("Enter value for amOt: ");
     scanf("%f", &amOt);
 
-
-
-    while (value > 0)
-    {
-        value = value * (amOt / 100);
-        counter++;
-    }
+    // while (value > 0)
+    // {
+    //     value = value * (amOt / 100);
+    //     counter++;
+    // }
     do
     {
         counter++;
