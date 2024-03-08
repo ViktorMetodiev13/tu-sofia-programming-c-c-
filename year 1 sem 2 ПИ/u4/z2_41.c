@@ -15,19 +15,19 @@ int main()
     {
         if(n % 5 == 1)
         {
-            printf("The remainder is 1.");
+            printf("The closest number is %d.", n + 4);
         }
         else if(n % 5 == 2)
         {
-            printf("The remainder is 2.");
+            printf("The closest number is %d.", n + 3);
         }
         else if(n % 5 == 3)
         {
-            printf("The remainder is 3.");
+            printf("The closest number is %d.", n + 2);
         }
         else if(n % 5 == 4)
         {
-            printf("The remainder is 4.");
+            printf("The closest number is %d.", n + 1);
         }
     }
     
