@@ -12,7 +12,7 @@ int main()
     
     for (int i = 0; i < 15; i+=3)
     {
-        printf("a[%d] = %f", i, a[i]);
+        printf("a[%d] = %f\n", i, a[i]);
     }
 
     return 0;
