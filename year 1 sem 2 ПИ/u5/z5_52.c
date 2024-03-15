@@ -13,7 +13,7 @@ int main()
     printf("%d", F_0_2);
     printf(" %d", F_0_1);
 
-    for (int i = 0; i < N; i++)
+    for (int i = 0; i < N - 2; i++)
     {
         int Fi = F_0_2 + F_0_1;
 

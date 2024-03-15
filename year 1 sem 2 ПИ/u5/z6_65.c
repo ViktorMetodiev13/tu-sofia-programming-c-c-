@@ -4,7 +4,6 @@ int main()
 {
     int a[5][7];
 
-    // TODO: create 7 sums for each column
     int sum1 = 0;
     int sum2 = 0;
     int sum3 = 0;
