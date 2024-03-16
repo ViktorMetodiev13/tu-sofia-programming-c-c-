@@ -14,10 +14,10 @@ int main() {
     printf("Enter value for B: ");
     scanf("%d", &B);
 
-    int D[M][M];
-
     int sum = 0;
     int counter = 0;
+
+    int D[M][M];
 
     printf("Enter elements: \n");
     for (int i = 0; i < M; i++)
