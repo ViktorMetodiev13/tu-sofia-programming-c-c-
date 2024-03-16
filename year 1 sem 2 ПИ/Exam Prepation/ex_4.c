@@ -49,8 +49,8 @@ int main()
                 min = A[r][c];
             }
         }
-        printf("Max value for row %d is: %d\n", r, max);
-        printf("Min value for row %d is: %d\n", r, min);
+        printf("Max value for column %d is: %d\n", r, max);
+        printf("Min value for column %d is: %d\n", r, min);
     }
 
     return 0;
