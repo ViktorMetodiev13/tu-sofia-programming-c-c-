@@ -12,6 +12,10 @@ int main()
 
     int A[3][3];
 
+    int max_count = 0;
+    int min_count = 0;
+
+    printf("Enter elements:\n");
     for (int r = 0; r < 3; r++)
     {
         for (int c = 0; c < 3; c++)
@@ -24,8 +28,7 @@ int main()
         }
     }
 
-    printf("\n");
-
+    printf("\nInitial matrix:\n");
     for (int r = 0; r < 3; r++)
     {
         for (int c = 0; c < 3; c++)
@@ -40,7 +43,7 @@ int main()
     int min = 500;
     int max = -500;
 
-    int r_max, r_min;
+    int r_max, c_max, r_min, c_min, temp;
 
     for (int r = 0; r < 3; r++)
     {
@@ -50,15 +53,44 @@ int main()
             {
                 min = A[r][c];
                 r_min = r;
+                c_min = c;
+            }
+
+            if (min < N)
+            {
+                min_count++;
             }
 
             if (max < A[r][c])
             {
                 max = A[r][c];
                 r_max = r;
+                c_max = c;
             }
+
+            if (max > M)
+            {
+                max_count++;
+            }
+
+            temp = A[r_max][c];
+            A[r_max][c] = A[r_max][c];
+            A[r_max][c] = temp;
         }
     }
+
+    printf("Changed matrix:\n");
+    for (int r = 0; r < 3; r++)
+    {
+        for (int c = 0; c < 3; c++)
+        {
+            printf("%d ", A[r][c]);
+        }
+        printf("\n");
+    }
+
+    printf("\nThe count of numbers higher than M is %d\n", max_count);
+    printf("The count of numbers lower than N is %d", min_count);
 
     return 0;
 }

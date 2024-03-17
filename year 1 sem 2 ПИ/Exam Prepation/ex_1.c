@@ -67,7 +67,6 @@ int main()
     {
         printf("%.2f ", B[i]);
     }
-    
 
     return 0;
 }
