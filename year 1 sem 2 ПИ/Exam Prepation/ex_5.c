@@ -51,6 +51,7 @@ int main()
         }
     }
 
+    // начинът за транспониране ↓
     float temp;
 
     for (int r = 0; r < M; r++)
@@ -62,6 +63,8 @@ int main()
             D[c][r] = temp;
         }
     }
+
+    // начинът за транспониране ↑
     
     for (int r = 0; r < M; r++)
     {
