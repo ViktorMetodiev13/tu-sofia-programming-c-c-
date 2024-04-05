@@ -4,7 +4,7 @@ int main()
 {
     printf("Develop a program with a matrix A[6][5] which values should be float and are in range [0, 99.9].\n");
     printf("Action: The result should be a new array B with values from A[i][j] < 0 from columns.\n");
-    printf("Produces by Viktor Metodiev - 361223016.\n");
+    printf("Produces by Viktor Metodiev - 361223016 - 21B group.\n");
 
     float A[6][5];
     int position = 0;
