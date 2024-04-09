@@ -22,6 +22,7 @@ int main()
         }
     }
 
+    printf("Matrix A:\n");
     for (int r = 0; r < 6; r++)
     {
         for (int c = 0; c < 5; c++)
@@ -47,10 +48,10 @@ int main()
             position++;
         }
 
-        printf("%0.2f\n", sum);
+        printf("column %d: %0.2f\n", r, sum);
     }
     
-    printf("Result:\n");
+    printf("Values in matrix B: ");
     for (int i = 0; i < position; i++)
     {
         printf("%0.2f ", B[i]);
